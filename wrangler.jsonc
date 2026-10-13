@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "receiptlink",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "receiptlink",
+    "database_id": "befa2b47-af0a-4ee4-843f-a51fd6aed05f",
+    "migrations_dir": "migrations"
+  }],
+  "vars": {
+    "CONTRACT_ADDRESS": "0xd1e42781571EE350C923ed8c024ffCfCe04b3cbf",
+    "MONAD_RPC_URL": "https://testnet-rpc.monad.xyz"
+  }
+}
