@@ -4,13 +4,13 @@ Get paid. Send your work. ReceiptLink creates one-time USDC payment links on Mon
 
 Built for the Metropolis hackathon, Track 02: Consumer Products & Payments. Intended users are freelancers and digital-product sellers who need to connect a payment request, verifiable settlement and delivery without manually matching wallet transfers to orders.
 
-Live prototype: https://receiptlink.mongangstudio.workers.dev
+Live prototype: https://receiptlink.emilpepil.workers.dev
 
 Deployed contract: `0xd1e42781571EE350C923ed8c024ffCfCe04b3cbf`. Its deployed runtime and payment token were verified against the local compiled contract. Production smoke checks passed for SPA routing, configuration, signed wallet login, replay rejection, finalized contract reads and session revocation.
 
 A two-wallet payment through the local frontend passed on Monad Testnet: invoice `0x531375820c6da6cc4c66aac14e53d69beab263ef8a10ccc010986703dae7a0fe`, payment transaction `0x28614cab2a8cd8bac3186b39a705659b1d8a7c4f8bcdcde5f826079c77213dd5`. Finality and the direct transfer of 0.1 test USDC from buyer to seller were independently verified. A subsequent invoice with a delivery link was tested by the project owner: payment, payer-only link retrieval, opening the Google Drive file and rejection of the seller wallet all passed.
 
-MetaMask flagged the public site during connection; classification review is pending, so the public wallet payment flow has not been completed. The end-to-end demo uses localhost against the deployed Monad Testnet contract. This limitation is disclosed rather than asking users to disable wallet protection.
+MetaMask flagged the previous hosted URL, https://receiptlink.mongangstudio.workers.dev, during connection; classification review is pending. The site was subsequently redeployed to https://receiptlink.emilpepil.workers.dev in the project owner’s new Cloudflare account. Wallet security classification and the full public payment flow on the new URL have not yet been verified. The end-to-end demo uses localhost against the deployed Monad Testnet contract. This limitation is disclosed rather than asking users to disable wallet protection.
 
 ## Demo flow
 
@@ -45,7 +45,7 @@ npx wrangler login --scopes account:read user:read workers_scripts:write d1:writ
 npx wrangler d1 create receiptlink
 ```
 
-Set the returned database ID in `wrangler.jsonc`. Add the deployed public `CONTRACT_ADDRESS` to its `vars`. If the account already has a Worker or database with these names, choose unused names and update the corresponding configuration and migration scripts.
+Set `account_id` in `wrangler.jsonc` to your own Cloudflare account ID (available from `npx wrangler whoami`). Set the returned database ID in `wrangler.jsonc`. Add the deployed public `CONTRACT_ADDRESS` to its `vars`. If the account already has a Worker or database with these names, choose unused names and update the corresponding configuration and migration scripts.
 
 ```sh
 npm run db:remote

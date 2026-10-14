@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "receiptlink",
+  "account_id": "60bfda9ece3eb16b35248417ae84a031",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-13",
   "compatibility_flags": ["nodejs_compat"],
@@ -13,7 +14,7 @@
   "d1_databases": [{
     "binding": "DB",
     "database_name": "receiptlink",
-    "database_id": "befa2b47-af0a-4ee4-843f-a51fd6aed05f",
+    "database_id": "8271d2a6-c3be-43ba-8605-4ed0fbcfc3a8",
     "migrations_dir": "migrations"
   }],
   "vars": {
