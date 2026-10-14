@@ -1,0 +1,6 @@
+Use case: logo-brand / precise-object-edit.
+Edit the supplied selected ReceiptLink R logo. It is the exact target design, not a loose inspiration.
+Preserve the R silhouette EXACTLY: the rounded horizontal upper terminal, open upper-left bowl, broad smooth curved bowl, short left vertical stem with a rounded bottom, and thick diagonal leg with a rounded end. Keep the same continuous soft minimal typographic shape and proportions. Do not redesign the letter, add a left upper stem, introduce a counter or make a conventional font R.
+Change only colors and canvas presentation: a perfectly square canvas filled edge to edge with a uniform solid dark forest olive green #283823; the R in solid warm ivory #F6F3E8. Center the R with generous equal breathing room, about 58 percent of the square's height. Enlarge the existing shape cleanly; crisp antialiased vector-like edges.
+Only one R on one dark green square. No wordmark, no label, no border, no surrounding white margin, no rounded square tile, no icons, no gradients, no noise, no grain, no shadows, no lighting, no 3D.
+Final production logo artwork, square 1024x1024 target, no mockup.

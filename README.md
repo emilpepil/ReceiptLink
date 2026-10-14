@@ -86,6 +86,8 @@ ReceiptLink's application code and contract were created during the hackathon bu
 
 OpenAI Codex was used to assist with implementation, contract compilation, tests, documentation and deployment. The project owner defined the product and performed wallet signing and the two-wallet payment/delivery tests. Git history starts with the first recorded source snapshot; earlier development was not tracked in Git. Commit dates are not backdated.
 
+The R logo was created with OpenAI image generation and selected by the project owner. Its source image and generation prompt are included under `docs/branding`; the site uses a compressed WebP export and PNG/ICO favicons.
+
 ## License
 
 ReceiptLink source is available under the [MIT License](LICENSE). Third-party dependencies retain their respective licenses.
