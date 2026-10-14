@@ -6,11 +6,13 @@ Built for the Metropolis hackathon, Track 02: Consumer Products & Payments. Inte
 
 Live prototype: https://receiptlink.emilpepil.workers.dev
 
+**Known issue: MetaMask displays a security warning on the current hosted URL.** The project owner observed the same warning on the previous URL. The cause has not been established, and a false positive has not been confirmed. Do not bypass the warning or disable wallet protection. The demo and completed two-wallet tests use the local frontend with the deployed Monad Testnet contract. See [judge access instructions](docs/judge-access.md) for a reproducible evaluation path.
+
 Deployed contract: `0xd1e42781571EE350C923ed8c024ffCfCe04b3cbf`. Its deployed runtime and payment token were verified against the local compiled contract. Production smoke checks passed for SPA routing, configuration, signed wallet login, replay rejection, finalized contract reads and session revocation.
 
 A two-wallet payment through the local frontend passed on Monad Testnet: invoice `0x531375820c6da6cc4c66aac14e53d69beab263ef8a10ccc010986703dae7a0fe`, payment transaction `0x28614cab2a8cd8bac3186b39a705659b1d8a7c4f8bcdcde5f826079c77213dd5`. Finality and the direct transfer of 0.1 test USDC from buyer to seller were independently verified. A subsequent invoice with a delivery link was tested by the project owner: payment, payer-only link retrieval, opening the Google Drive file and rejection of the seller wallet all passed.
 
-MetaMask flagged the previous hosted URL, https://receiptlink.mongangstudio.workers.dev, during connection; classification review is pending. The site was subsequently redeployed to https://receiptlink.emilpepil.workers.dev in the project owner’s new Cloudflare account. Wallet security classification and the full public payment flow on the new URL have not yet been verified. The end-to-end demo uses localhost against the deployed Monad Testnet contract. This limitation is disclosed rather than asking users to disable wallet protection.
+The project owner contacted MetaMask Support and was directed to its GitHub reporting channel. Both `receiptlink.mongangstudio.workers.dev` and `receiptlink.emilpepil.workers.dev` show a security warning. Redeployment did not resolve it. A review-request draft is available in [docs/metamask-review.md](docs/metamask-review.md); this repository does not claim that a GitHub review has been completed or that either URL has been cleared. The full payment flow on the current hosted URL remains unverified.
 
 ## Demo flow
 
@@ -63,7 +65,7 @@ npm run build
 
 Tests cover direct settlement, duplicate payments, cancellation ownership, failed token transfers, signed authentication and replay prevention, origin checks, chain term validation, authentic contract events, payment-token validation and access to delivery links. Local tests use a mock token; deployed payments use Circle test USDC.
 
-Before submitting, use two browser wallets on the deployed site: create an invoice, pay it, open its receipt, recover its delivery link from the payer wallet, and check that the other wallet cannot retrieve that link. This live two-wallet check is separate from the automated tests.
+For manual verification, use the local frontend with two separate test wallets: create an invoice, pay it, open its receipt, retrieve its delivery link from the payer wallet, and check that the other wallet cannot retrieve that link. This two-wallet check is separate from the automated tests. Do not ask evaluators to bypass the hosted site's wallet security warning.
 
 ## Architecture and limits
 
